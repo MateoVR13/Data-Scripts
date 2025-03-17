@@ -25,8 +25,8 @@ def resize_images_in_directory(input_dir, output_dir, new_width):
             except Exception as e:
                 print(f"Error processing {filename}: {e}")
 
-input_directory = 'C:/Users/matth/Downloads/Dataset_Rigidos'
-output_directory = 'C:/Users/matth/Downloads/Re_Dataset_Rigidos'
-new_width = 224
+input_directory = 'C:/Users/matth/Workspace/Raw_Images'
+output_directory = 'C:/Users/matth/Workspace/rigidos_resized'
+new_width = 600
 
 resize_images_in_directory(input_directory, output_directory, new_width)

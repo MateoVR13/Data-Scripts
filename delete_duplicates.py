@@ -3,7 +3,7 @@ import hashlib
 from pathlib import Path
 
 def get_file_hash(file_path):
-    """Generate MD5 hash for a file."""
+
     hasher = hashlib.md5()
     with open(file_path, 'rb') as file:
         while chunk := file.read(8192):
@@ -11,7 +11,7 @@ def get_file_hash(file_path):
     return hasher.hexdigest()
 
 def find_duplicates_in_main_directory(main_directory):
-    """Find and delete duplicate files across subfolders in the same main directory."""
+
     seen_files = {}
     main_dir_path = Path(main_directory)
 
@@ -29,12 +29,12 @@ def find_duplicates_in_main_directory(main_directory):
 
                         seen_files[file_hash] = file_path
                     else:
-                        # Duplicate file, delete it
+
                         print(f"Duplicate found: {file_path}. Deleting.")
-                        file_path.unlink()  # Deletes the file
+                        file_path.unlink()
 
 if __name__ == "__main__":
-    # Specify the main directory containing the subfolders
+
     main_directory = 'C:/Users/matth/Workspace/TodasLasImagenes'
     
     find_duplicates_in_main_directory(main_directory)
